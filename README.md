@@ -11,14 +11,16 @@ The goal is to gradually expand it with Docker Compose, GitHub Actions, Kubernet
 - Static HTML page
 - Docker image based on Nginx
 - Local container execution
+- Docker Compose configuration
 
 ## Technologies
 
 - HTML
 - Docker
+- Docker Compose
 - Nginx
 
-## How to Run
+## How to Run with Docker
 
 Build the Docker image:
 
@@ -44,9 +46,29 @@ Stop the container:
 docker stop junior-devops-lab
 ```
 
+## How to Run with Docker Compose
+
+Start the service:
+
+```bash
+docker compose up -d
+```
+
+Check the running service:
+
+```bash
+docker compose ps
+```
+
+Stop and remove the service:
+
+```bash
+docker compose down
+```
+
 ## Roadmap
 
-- Add Docker Compose
+- Add Docker Compose - done
 - Add a GitHub Actions pipeline
 - Create Kubernetes manifests
 - Study a first Terraform configuration
