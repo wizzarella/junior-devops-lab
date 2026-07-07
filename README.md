@@ -14,6 +14,7 @@ The goal is to gradually expand it with Docker Compose, GitHub Actions, Kubernet
 - Docker Compose configuration
 - GitHub Actions workflow for Docker build validation
 - Basic Kubernetes manifests
+- Basic Terraform local provider example
 
 ## Technologies
 
@@ -23,6 +24,7 @@ The goal is to gradually expand it with Docker Compose, GitHub Actions, Kubernet
 - Nginx
 - GitHub Actions
 - Kubernetes
+- Terraform
 
 ## How to Run with Docker
 
@@ -98,9 +100,26 @@ Validate the manifests when a local Kubernetes cluster is running:
 kubectl apply --dry-run=client -f k8s/
 ```
 
+## Terraform
+
+The `terraform/` directory contains a first Terraform example using the `local` provider.
+
+It creates a local text file for learning purposes and does not provision cloud resources.
+
+Useful commands:
+
+```bash
+cd terraform
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
+
 ## Roadmap
 
 - Add Docker Compose - done
 - Add a GitHub Actions pipeline - done
 - Create Kubernetes manifests - in progress
-- Study a first Terraform configuration
+- Study a first Terraform configuration - in progress
