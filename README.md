@@ -13,6 +13,7 @@ The goal is to gradually expand it with Docker Compose, GitHub Actions, Kubernet
 - Local container execution
 - Docker Compose configuration
 - GitHub Actions workflow for Docker build validation
+- Basic Kubernetes manifests
 
 ## Technologies
 
@@ -21,6 +22,7 @@ The goal is to gradually expand it with Docker Compose, GitHub Actions, Kubernet
 - Docker Compose
 - Nginx
 - GitHub Actions
+- Kubernetes
 
 ## How to Run with Docker
 
@@ -83,9 +85,22 @@ It checks that the Docker image can be built successfully:
 docker build -t junior-devops-lab .
 ```
 
+## Kubernetes Manifests
+
+The `k8s/` directory contains basic Kubernetes manifests:
+
+- `deployment.yml` defines the web application pod managed by a Deployment
+- `service.yml` exposes the application through a NodePort service
+
+Validate the manifests when a local Kubernetes cluster is running:
+
+```bash
+kubectl apply --dry-run=client -f k8s/
+```
+
 ## Roadmap
 
 - Add Docker Compose - done
 - Add a GitHub Actions pipeline - done
-- Create Kubernetes manifests
+- Create Kubernetes manifests - in progress
 - Study a first Terraform configuration
