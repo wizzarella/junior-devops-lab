@@ -123,5 +123,36 @@ terraform apply
 
 - Add Docker Compose - done
 - Add a GitHub Actions pipeline - done
-- Create Kubernetes manifests - in progress
-- Study a first Terraform configuration - in progress
+- Create basic Kubernetes manifests - done
+- Study a first Terraform configuration - done
+- Run the Kubernetes manifests on a local cluster - next
+- Publish the Docker image to a container registry - next
+- Expand Terraform with a real infrastructure use case - next
+
+## What I Learned
+
+Through this project, I practiced:
+
+- Creating a Git repository and working with branches and pull requests
+- Building a Docker image for a static Nginx website
+- Running the project locally with Docker Compose
+- Adding GitHub Actions checks for Docker and Terraform
+- Writing basic Kubernetes manifests for a web application
+- Using Terraform with the local provider
+- Keeping generated files, state files, and local artifacts out of version control
+
+## Current Result
+
+The project now includes a small static DevOps lab dashboard served with Nginx in Docker.
+
+It can be run locally with:
+
+```bash
+docker compose up -d --build
+```
+
+Then opened at:
+
+```text
+http://localhost:8080
+```
