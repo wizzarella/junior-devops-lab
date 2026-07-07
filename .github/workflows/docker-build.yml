@@ -1,4 +1,4 @@
-name: Docker Build
+name: CI
 
 on:
   push:
@@ -18,3 +18,25 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t junior-devops-lab .
+
+  terraform-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Check Terraform formatting
+        run: terraform fmt -check
+        working-directory: terraform
+
+      - name: Initialize Terraform
+        run: terraform init
+        working-directory: terraform
+
+      - name: Validate Terraform
+        run: terraform validate
+        working-directory: terraform
