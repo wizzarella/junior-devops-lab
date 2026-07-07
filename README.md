@@ -1,5 +1,7 @@
 # Junior DevOps Lab
 
+[![CI](https://github.com/wizzarella/junior-devops-lab/actions/workflows/docker-build.yml/badge.svg)](https://github.com/wizzarella/junior-devops-lab/actions/workflows/docker-build.yml)
+
 A personal DevOps learning lab built step by step.
 
 The project starts with a static HTML page served by Nginx inside a Docker container.
