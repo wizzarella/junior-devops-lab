@@ -1,12 +1,214 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Junior DevOps Lab</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --text: #162033;
+      --muted: #5d6b82;
+      --border: #d9e1ec;
+      --accent: #1f7a5c;
+      --accent-soft: #e7f4ef;
+      --code-bg: #101828;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: #122033;
+      color: #ffffff;
+      padding: 48px 20px;
+    }
+
+    .container {
+      width: min(1040px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: #9fd8c0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: #d6deea;
+      font-size: 1.1rem;
+    }
+
+    main {
+      padding: 32px 0 48px;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .status-list {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .status-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .done {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    code {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+
+    pre {
+      overflow-x: auto;
+      background: var(--code-bg);
+      color: #e5ecf6;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 0;
+    }
+
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+
+    footer {
+      color: var(--muted);
+      padding: 0 0 40px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h1>Junior DevOps Lab</h1>
-  <p>Il mio laboratorio personale per imparare DevOps con Docker, CI/CD, Kubernetes e Terraform.</p>
+  <header>
+    <div class="container">
+      <p class="eyebrow">Personal DevOps Portfolio Lab</p>
+      <h1>Junior DevOps Lab</h1>
+      <p class="intro">
+        A hands-on project for learning Docker, Docker Compose, GitHub Actions,
+        Kubernetes manifests, and Terraform basics by building a small static site delivery workflow.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>What This Lab Shows</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Containerized Web App</h3>
+          <p>A static HTML page served by Nginx inside a Docker container.</p>
+        </article>
+        <article class="card">
+          <h3>Repeatable Local Run</h3>
+          <p>Docker Compose stores the local run configuration in version control.</p>
+        </article>
+        <article class="card">
+          <h3>CI Validation</h3>
+          <p>GitHub Actions checks Docker and Terraform changes before merging.</p>
+        </article>
+        <article class="card">
+          <h3>Infrastructure Basics</h3>
+          <p>Kubernetes and Terraform examples introduce deployment and IaC concepts.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project Status</h2>
+      <ul class="status-list">
+        <li><span>Static HTML site</span><span class="done">Done</span></li>
+        <li><span>Docker image with Nginx</span><span class="done">Done</span></li>
+        <li><span>Docker Compose setup</span><span class="done">Done</span></li>
+        <li><span>GitHub Actions CI</span><span class="done">Done</span></li>
+        <li><span>Kubernetes manifests</span><span class="done">Started</span></li>
+        <li><span>Terraform local provider example</span><span class="done">Started</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Run Locally</h2>
+      <pre><code>docker compose up -d
+open http://localhost:8080
+docker compose down</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built step by step as a junior DevOps learning project.</p>
+  </footer>
 </body>
 </html>
