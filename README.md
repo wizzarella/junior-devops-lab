@@ -12,6 +12,7 @@ The goal is to gradually expand it with Docker Compose, GitHub Actions, Kubernet
 - Docker image based on Nginx
 - Local container execution
 - Docker Compose configuration
+- GitHub Actions workflow for Docker build validation
 
 ## Technologies
 
@@ -19,6 +20,7 @@ The goal is to gradually expand it with Docker Compose, GitHub Actions, Kubernet
 - Docker
 - Docker Compose
 - Nginx
+- GitHub Actions
 
 ## How to Run with Docker
 
@@ -66,9 +68,24 @@ Stop and remove the service:
 docker compose down
 ```
 
+## Continuous Integration
+
+This project includes a GitHub Actions workflow that validates the Docker build.
+
+The workflow runs on:
+
+- Pushes to `main`
+- Pull requests targeting `main`
+
+It checks that the Docker image can be built successfully:
+
+```bash
+docker build -t junior-devops-lab .
+```
+
 ## Roadmap
 
 - Add Docker Compose - done
-- Add a GitHub Actions pipeline
+- Add a GitHub Actions pipeline - done
 - Create Kubernetes manifests
 - Study a first Terraform configuration
